@@ -12,7 +12,7 @@ const routes = [
   { path: '/hawaii', name: 'hawaii', component: Hawaii },
   { path: '/jamaica', name: 'jamaica', component: Jamaica },
   { path: '/panama', name: 'panama', component: Panama },
-  { path: '/description/:id', name: 'destinationShow', component: DestinationShow }
+  { path: '/description/:id', name: 'destination.show', component: DestinationShow }
 ]
 
 const router = createRouter({

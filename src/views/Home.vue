@@ -5,7 +5,7 @@
       <router-link
         v-for="destination in destinations"
         :key="destination.id"
-        :to="destination.slug"
+        :to="{ name: 'destination.show', params: { id: destination.id } }"
       >
         <h2>{{ destination.name }}</h2>
         <img :src="`/images/${destination.image}`" :alt="destination.name" />
@@ -14,12 +14,12 @@
   </div>
 </template>
 <script>
-import sourceData from "@/data.json";
+import sourceData from '@/data.json'
 export default {
   data() {
     return {
-      destinations: sourceData.destinations,
-    };
-  },
-};
+      destinations: sourceData.destinations
+    }
+  }
+}
 </script>
