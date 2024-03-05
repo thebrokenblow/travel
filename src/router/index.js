@@ -1,4 +1,4 @@
-import { createRouter, createWebHistory } from 'vue-router'
+import { createRouter, createWebHistory, useRoute } from 'vue-router'
 import Home from '@/views/Home.vue'
 
 const routes = [
@@ -6,7 +6,14 @@ const routes = [
   {
     path: '/destination/:id/:slug',
     name: 'destination.show',
-    component: () => import('@/views/DestinationShow.vue')
+    component: () => import('@/views/DestinationShow.vue'),
+    props: (route) => ({ ...route.params, id: parseInt(route.params.id) })
+  },
+  {
+    path: '/destination/:id/:slug/:experienceSlug',
+    name: 'experience.show',
+    component: () => import('@/views/ExperienceShow.vue'),
+    props: (route) => ({ id: parseInt(route.params.id) })
   }
 ]
 
