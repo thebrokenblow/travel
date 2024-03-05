@@ -13,7 +13,7 @@ const routes = [
     path: '/destination/:id/:slug/:experienceSlug',
     name: 'experience.show',
     component: () => import('@/views/ExperienceShow.vue'),
-    props: (route) => ({ id: parseInt(route.params.id) })
+    props: (route) => ({ ...route.params, id: parseInt(route.params.id) })
   }
 ]
 
